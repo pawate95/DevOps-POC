@@ -13,7 +13,13 @@
 <sonar.login>admin</sonar.login>
     <sonar.password>admin</sonar.password>
   </properties>
-	
+	<distributionManagement>
+    <repository>
+        <id>central</id>
+        <name>pratikdevops-artifactory-primary-0-releases</name>
+        <url>https://pratikdevops.jfrog.io/pratikdevops/libs-release-local</url>
+    </repository>
+</distributionManagement>
 	<dependencies>
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -78,19 +84,19 @@
 					<target>1.7</target>
 				</configuration>
 				</plugin>
-			<plugin>
+<!-- 			<plugin>
 				<groupId>org.apache.tomcat.maven</groupId>
 				<artifactId>tomcat7-maven-plugin</artifactId>
 				<version>2.2</version>
 				<configuration>
 					<url>http://tomcatserver.eastus.cloudapp.azure.com:8080/manager/text</url>
-<!-- 					<server>TomcatServer</server> -->
+ 					<server>TomcatServer</server>
 					<path>/devops</path>
 					<username>admin1</username>
                 			<password>password1</password>
                 			<update>true</update>
 				</configuration>
-			</plugin>
+			</plugin> -->
 				
 		</plugins>
 	</build>
