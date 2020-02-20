@@ -115,7 +115,7 @@ Status       &#160;&#160;&#160;&#160;&#160;&#160; <input type="text" name="statu
 <button type="Submit" value="Submit">Submit</button>
 &nbsp;&nbsp;
 </form>
-<form action="cancelpage" method="post">
+<form action="avnrepairpage" method="post">
 <button type="Submit" value="Submit" style="position: absolute;left: 728px;top: 363px;">Cancel</button>
 </form>
 </div>
