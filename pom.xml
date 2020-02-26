@@ -89,15 +89,58 @@
 				<artifactId>tomcat7-maven-plugin</artifactId>
 				<version>2.2</version>
 				<configuration>
-					<url>http://devops-poc.eastus.cloudapp.azure.com:8080/manager/text</url>
- 					<server>TomcatServer</server>
+					<server>TomcatServer</server>
 					<path>/devops</path>
-					<username>admin</username>
-                			<password>password</password>
-                			<update>true</update>
+					<update>true</update>
 				</configuration>
 			</plugin>
 				
 		</plugins>
 	</build>
+	<profiles>
+	<profile>
+    <id>testdeploy</id>
+    <activation>
+        <activeByDefault>false</activeByDefault>
+    </activation>
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<url>http://devops-poc.eastus.cloudapp.azure.com:8080/manager/text</url>
+ 					<username>admin</username>
+                			<password>password</password>
+				</configuration>
+			</plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</profile>
+		<profile>
+    <id>proddeploy</id>
+    <activation>
+        <activeByDefault>false</activeByDefault>
+    </activation>
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<url>http://prod11.eastus.cloudapp.azure.com:8080/manager/text</url>
+ 					<username>admin</username>
+                			<password>password</password>
+				</configuration>
+			</plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</profile>
+		</profiles>
 </project>
